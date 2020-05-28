@@ -40,8 +40,10 @@ public class CameraTextUI {
             int choice = in.nextInt();
 
             if (choice == -1) {
+
                 isDone = true;
                 break;
+
             } else if (choice >= 0 && choice < manager.size()) {
 
                 System.out.print("Aperture [the F number]: ");
