@@ -1,5 +1,7 @@
 package Model;
 
+import static java.lang.Double.POSITIVE_INFINITY;
+
 public class Calculator {
     private double hyperFocal;
     private double nearFocal;
@@ -20,6 +22,9 @@ public class Calculator {
 
     public double getFarFocal (Lens lens, double hyperFocal, double distance) {
         this.farFocal = (hyperFocal * distance*1000) /  (hyperFocal - (distance*1000 - lens.getFocalLens()));
+        if (farFocal < 0) {
+            return POSITIVE_INFINITY;
+        }
         return farFocal/1000;
     }
 
