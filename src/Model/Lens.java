@@ -12,27 +12,27 @@ public class Lens {
         this.focalLens = focalLens;
     }
 
-    public String getTheMake () {
+    public String getTheMake() {
         return theMake;
     }
 
-    public void setTheMake (String theMake) {
+    public void setTheMake(String theMake) {
         this.theMake = theMake;
     }
 
-    public double getMaxAperture () {
+    public double getMaxAperture() {
         return maxAperture;
     }
 
-    public void setMaxAperture (double maxAperture) {
+    public void setMaxAperture(double maxAperture) {
         this.maxAperture = maxAperture;
     }
 
-    public int getFocalLens () {
+    public int getFocalLens() {
         return focalLens;
     }
 
-    public void setFocalLens (int focalLens) {
+    public void setFocalLens(int focalLens) {
         this.focalLens =  focalLens;
     }
 

@@ -8,27 +8,27 @@ public class Calculator {
     private double farFocal;
     private double depthOfField;
 
-    public double getHyperFocal (Lens lens, double aperture, double COC) {
+    public double getHyperFocal(Lens lens, double aperture, double COC) {
         this.hyperFocal = (lens.getFocalLens() * lens.getFocalLens()) / (aperture * COC);
-        return hyperFocal;
+        return hyperFocal/1000;
     }
 
 
-    public double getNearFocal (Lens lens, double hyperFocal, double distance) {
-        this.nearFocal = (hyperFocal * distance*1000) /  (hyperFocal + (distance*1000 - lens.getFocalLens()));
-        return nearFocal/1000;
+    public double getNearFocal(Lens lens, double hyperFocal, double distance) {
+        this.nearFocal = (hyperFocal * distance) /  (hyperFocal + (distance*1000 - lens.getFocalLens())/1000);
+        return nearFocal;
     }
 
 
-    public double getFarFocal (Lens lens, double hyperFocal, double distance) {
-        this.farFocal = (hyperFocal * distance*1000) /  (hyperFocal - (distance*1000 - lens.getFocalLens()));
+    public double getFarFocal(Lens lens, double hyperFocal, double distance) {
+        this.farFocal = (hyperFocal * distance) /  (hyperFocal - (distance*1000 - lens.getFocalLens())/1000);
         if (farFocal < 0) {
             return POSITIVE_INFINITY;
         }
-        return farFocal/1000;
+        return farFocal;
     }
 
-    public double getDepthOfField (double farFocal, double nearFocal) {
+    public double getDepthOfField(double farFocal, double nearFocal) {
         this.depthOfField = farFocal - nearFocal;
         return depthOfField;
     }

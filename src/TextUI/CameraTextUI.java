@@ -62,7 +62,7 @@ public class CameraTextUI {
                     System.out.println("  In focus: " +
                             formatM(nearFocal) + "m to " + formatM(farFocal) +
                             "m [DOF = " + formatM(depthOfField) + "m]" );
-                    System.out.println("  Hyperfocal point: " + formatM(hyperFocal/1000) + "m");
+                    System.out.println("  Hyperfocal point: " + formatM(hyperFocal) + "m");
                     System.out.print("\n");
                 }
             } else {
